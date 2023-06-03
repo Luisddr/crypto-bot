@@ -52,6 +52,10 @@ app.get('/test-point', async (req,res)=>{
   }
 })
 
+app.get('/', (req, res)=>{
+  res.send("app running")
+})
+
 app.get('/xrp-usdt',async (req, res)=>{
   const {type, price} = req.query
   const channel  = client.channels.cache.get(channelId)
