@@ -67,7 +67,7 @@ app.get('/xrp-usdt',async (req, res)=>{
 
 })
 
-app.listen(3001, ()=>{
+app.listen(()=>{
   console.log("Server running on port 3001")
   client.login(process.env.TOKEN)
 })
