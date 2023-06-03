@@ -13,8 +13,6 @@ const client = new Discord.Client({
 const channelId = process.env.CHANNEL
 const app = express()
 
-
-
 client.on("ready", () => {
   console.log(`Logged in as ${client.user.tag}! ${client.eventNames()}`)
 })
