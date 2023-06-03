@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require('express')
 const Discord = require("discord.js")
+const cors = require("cors")
 const client = new Discord.Client({
   intents:[
     Discord.GatewayIntentBits.Guilds, 
@@ -12,6 +13,7 @@ const client = new Discord.Client({
 
 const channelId = process.env.CHANNEL
 const app = express()
+app.use(cors())
 
 client.on("ready", () => {
   console.log(`Logged in as ${client.user.tag}! ${client.eventNames()}`)
