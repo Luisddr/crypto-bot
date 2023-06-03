@@ -11,9 +11,12 @@ const client = new Discord.Client({
   ]
 })
 
+
+
 const channelId = process.env.CHANNEL
 const app = express()
 app.use(cors())
+const port = process.env.PORT || 3000;
 
 client.on("ready", () => {
   console.log(`Logged in as ${client.user.tag}! ${client.eventNames()}`)
@@ -71,7 +74,7 @@ app.get('/xrp-usdt',async (req, res)=>{
 
 })
 
-app.listen(()=>{
+app.listen(port, "0.0.0.0",()=>{
   console.log("Server running on port 3001")
   client.login(process.env.TOKEN)
 })
